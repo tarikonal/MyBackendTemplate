@@ -1,4 +1,5 @@
 ﻿using Entities.Abstract;
+using System;
 
 namespace Entities.Concrete
 {
@@ -9,7 +10,7 @@ namespace Entities.Concrete
 
         public string ProductName { get; set; }
 
-        public int UnitsInStock { get; set; }
+        public short UnitsInStock { get; set; }
 
         public decimal UnitPrice { get; set; }
     }

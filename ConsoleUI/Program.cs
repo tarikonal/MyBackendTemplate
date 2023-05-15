@@ -9,9 +9,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //ProductTest();
+           // ProductTest();
             ProductTest2();
-            //CategoryTest();
+           // CategoryTest();
         }
 
         private static void CategoryTest()

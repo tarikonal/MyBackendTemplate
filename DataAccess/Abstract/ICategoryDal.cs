@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace DataAccess.Abstract
 {
     public interface ICategoryDal :IEntityRepository<Category>
     {
-        //List<Category> GetAll();
+        //IDataResult<List<Category>> GetAll();
         //void Add(Category category);
         //void Delete(Category category);
         //void Update(Category category);

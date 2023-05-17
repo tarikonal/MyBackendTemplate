@@ -14,19 +14,33 @@ namespace WebAPI.Controllers
     public class ProductsController : ControllerBase
     {
         IProductService _productService;
+        ICategoryService _categoryService;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
             //IProductService productService = new ProductManager(new EFProductDal());
-            var result = _productService.GetAll();//GetProductDetails();
+            var result = _productService.GetProductDetails();//.GetAll();
             if (result.Success) {
                 return Ok(result);  
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getallcategories")]
+        public IActionResult GetAllCategories()
+        {
+            //IProductService productService = new ProductManager(new EFProductDal());
+            var result = _categoryService.GetAll();//.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
             }
             return BadRequest(result);
         }

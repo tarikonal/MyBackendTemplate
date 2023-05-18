@@ -20,6 +20,8 @@ namespace Business.DependencyResolvers.Autofac
         {
            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();// --> services.AddSingleton<IProductService, ProductManager>();
            builder.RegisterType<EFProductDal>().As<IProductDAL>().SingleInstance();// --> services.AddSingleton<IProductService, ProductManager>();
+           builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance(); 
+           builder.RegisterType<EFCategoryDal>().As<ICategoryDal>().SingleInstance(); 
         }
     }
 }

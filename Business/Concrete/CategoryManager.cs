@@ -26,7 +26,7 @@ namespace Business.Concrete
         {
             //İş Kodları
            // return _categoryDal.GetAll();
-            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(), Messages.ProductsListed);
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetList(), Messages.ProductsListed);
         }
 
         //select * from Categories where categoryId=3

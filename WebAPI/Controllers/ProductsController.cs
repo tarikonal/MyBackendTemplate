@@ -26,11 +26,11 @@ namespace WebAPI.Controllers
         public IActionResult GetAll()
         {
             //IProductService productService = new ProductManager(new EFProductDal());
-            var result = _productService.GetProductDetails();//.GetAll();
+            var result = _productService.GetAll();
             if (result.Success) {
-                return Ok(result);  
+                return Ok(result.Data);  
             }
-            return BadRequest(result);
+            return BadRequest(result.Message);
         }
 
         [HttpGet("getallcategories")]
